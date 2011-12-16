@@ -1,6 +1,8 @@
 = rotor
 
-Description goes here.
+An attempt at a ruby, and hopefully better, version of Motor.
+
+Rotor is a simple component based game engine. (Maybe one day)
 
 == Contributing to rotor
  
