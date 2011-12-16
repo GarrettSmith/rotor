@@ -19,7 +19,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{TODO: one-line summary of your gem}
   gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "garrettsmith@live.ca"
+  gem.email = "garrettwhsmith@gmail.com"
   gem.authors = ["Garrett Smith"]
   # dependencies defined in Gemfile
 end
@@ -51,3 +51,6 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+# Rotor specific 
+require 'ruby-opengl'
