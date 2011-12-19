@@ -1,24 +1,30 @@
 # Handles a pool of actors to execute tasks.
-module TaskManager
-  require 'actor'
+class TaskManager
+  require "actor"
+  require "facter"
 
   Ready = Struct.new(:this)
   Work = Struct.new(:msg)
+
+  Cores = Facter.sp_number_processors
+  Worker_cores = (Cores - 1) > 0 ? (Cores - 1) : 1
+
+  def 
 
   @supervisor = Actor.spawn do
     supervisor = Actor.current
     work_loop = Proc.new do
       loop do
         work = Actor.receive
-        puts("Processing: #{work.msg}")
+        #puts("Processing: #{work.msg}")
         supervisor << Ready[Actor.current]
       end
     end
 
     Actor.trap_exit = true
     ready_workers = []
-    10.times do |x|
-      # start 10 worker actors
+    Worker_cores.times do |x|
+      # Create workers
       ready_workers << Actor.spawn_link(&work_loop)
     end
     loop do
