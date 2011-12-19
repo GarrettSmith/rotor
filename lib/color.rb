@@ -49,7 +49,6 @@ class Color
       h  = s = 0;
     else
       d = max - min
-      puts d
       s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
       case max
       when r
