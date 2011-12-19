@@ -27,22 +27,22 @@ pkg
 #
 # For MacOS:
 #
-#.DS_Store
+.DS_Store
 
-# For TextMate
-#*.tmproj
-#tmtags
+ For TextMate
+*.tmproj
+tmtags
 
-# For emacs:
-#*~
-#\#*
-#.\#*
+ For emacs:
+*~
+\#*
+.\#*
 
-# For vim:
-#*.swp
+ For vim:
+*.swp
 
-# For redcar:
-#.redcar
+ For redcar:
+.redcar
 
-# For rubinius:
-#*.rbc
+ For rubinius:
+*.rbc
