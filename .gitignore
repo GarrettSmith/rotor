@@ -46,3 +46,4 @@ tmtags
 
  For rubinius:
 *.rbc
+.rbx
