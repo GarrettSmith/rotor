@@ -1,30 +1,15 @@
 ##
-# Entity represents an object within a game State.
-#
-# An entity should contain entities, components, or both as elements.
+# Entity represents an object within a State.
 class Entity
-  attr_accessor :name
-  def initialize(name, cs*)
+
+  @@number = 0
+
+  attr_reader :name, :number
+
+  def initialize(name)
     @name = name
-    @elements = Hash.new
-    cs.each { |c| self << c }
+    @number = @@number
+    @@number += 1
   end
 
-  ##
-  # An entity's unique key is its name.
-  def key 
-    @name
-  end
-
-  ##
-  # Returns all the child entities of the entity.
-  def children
-    @elements.select { |e| e.kind_of? Entity }
-  end
-
-  ##
-  # Returns all the Component objects of this entity.
-  def components
-    @elements.select { |e| e.kind_of? Component }
-  end
 end
