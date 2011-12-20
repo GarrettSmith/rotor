@@ -1,9 +1,8 @@
-class State < Container
-  def initialize
-    @elements = Array.new
-  end
+# A state is a container of entities
+class State
+  attr_accessor :entities
 
-  def entities 
-    @elements
+  def initialize
+    @entities = Array.new
   end
 end
