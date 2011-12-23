@@ -1,21 +1,11 @@
 ##
-# Inherit from Game to create your own game.
-class Game
+# Inherit from Rotor to create your own game.
+class Rotor
+  attr_reader :scenes, :managers
+
   def initialize
-
+    @scenes = Array.new
+    @managers = Array.new
   end
 
-  def destroy
-    
-  end
-
-  def run!
-    loop do
-
-    end
-  end
-
-  def update
-
-  end
 end
