@@ -9,6 +9,12 @@ class Object
     def meta_def name, &blk
         meta_eval { define_method name, &blk }
     end
+
+    # Removes methods from a metaclass
+    def meta_remove name
+      meta_eval { remove_method name }
+    end
+
 end
 
 class Module

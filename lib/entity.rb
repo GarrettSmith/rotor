@@ -1,9 +1,7 @@
+require 'metaid'
+
 # Entity represents an object within a Scene.
 class Entity
-  # Metaprogramming voodoo
-  def metaclass
-    class << self; self; end
-  end
 
   # Create an Entity from a hash of properties.
   def initialize(hsh={})
@@ -46,23 +44,15 @@ class Entity
   # Dynamically add a property to the entity and the associated getters
   # and setters.
   def add_property(property, value=nil)
+
+    # Add the property to the entity
+    meta_eval { attr_accessor property }
+
+    # Set the value of the property
     instance_variable = to_instance_variable(property)
+    self.instance_variable_set(instance_variable, value) if value
 
-    # Add the property as an instance variable
-    self.instance_variable_set(instance_variable, value)
-
-    # Define methods for the property
-    # Getter
-    self.metaclass.send(:define_method, property.to_sym) do
-      instance_variable_get(instance_variable)
-    end
-
-    # Setter
-    self.metaclass.send(:define_method, "#{property}=".to_sym) do |val|
-      instance_variable_set(instance_variable, val)
-    end
-
-    #Add to the list array of properties
+    #Add to the array of properties
     @properties << property.to_sym
 
     # Return value
@@ -81,10 +71,10 @@ class Entity
 
     # remove methods for the property
     # Getter
-    self.metaclass.send(:remove_method, property.to_sym)
+    meta_remove(property.to_sym)
 
     # Setter
-    self.metaclass.send(:remove_method, "#{property}=".to_sym) 
+    meta_remove("#{property}=".to_sym) 
 
     #remove from the array of properties
     @properties.delete(property.to_sym)
