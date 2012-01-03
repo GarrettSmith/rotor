@@ -33,6 +33,22 @@ describe Entity do
         entity.name.should == "Example"
       end
 
+      it "should not change the value of a previously defined property if no value is given" do
+        entity = Entity.new
+        entity.add_property(:name, "Example")
+        lambda do
+          entity.add_property(:name)
+        end.should_not change(entity, :name)
+      end
+
+      it "should change the value of a previously defined property if a value is given" do
+        entity = Entity.new
+        entity.add_property(:name, "Example")
+        lambda do
+          entity.add_property(:name, "New Name")
+        end.should change(entity, :name).to("New Name")
+      end
+
       it "should add a getter when a property is added" do
         entity = Entity.new
         entity.add_property(:name, "Example")

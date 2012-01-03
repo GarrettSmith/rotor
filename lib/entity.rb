@@ -1,6 +1,10 @@
 require 'metaid'
 
 # Entity represents an object within a Scene.
+#
+# Standard Properties
+# - name - The unique name of the entity.
+# - children - An array of children entities.
 class Entity
 
   # Create an Entity from a hash of properties.
