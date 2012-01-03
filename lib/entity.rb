@@ -1,6 +1,5 @@
 # Entity represents an object within a Scene.
 class Entity
-
   # Metaprogramming voodoo
   def metaclass
     class << self; self; end
