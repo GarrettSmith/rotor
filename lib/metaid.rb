@@ -1,5 +1,4 @@
-# Metaid == a few simple metaclass helper
-# (See http://whytheluckystiff.net/articles/seeingMetaclassesClearly.html.)
+# Metaid == a few simple metaclass helpers
 class Object
     # The hidden singleton lurks behind everyone
     def metaclass; class << self; self; end; end
