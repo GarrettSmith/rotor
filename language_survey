@@ -1,0 +1,39 @@
+Ruby
++ Very pretty
++ Yaml and opengl
++ Know it
++ Built in vectors and matrices
++ ~Reactive
+- slow
+- no recursion
+- not functional (or not fast functional)
+
+Scala
++ JVM libraries
++ Functional
++ ~Reactive
+- relatively fast
+- Not fast functional
+
+Haskell 
++ opengl
++ Yaml?
++ Functional
++ Reactive (Yampa)
+- need to learn more
+
+Erlang
++ functional
+- Need to learn
+- no yaml
+
+Javascript
++ Can run in browser
+- Slow
+- One thread
+- ugly
+- not functional
+
+Coffeescript
++ pretty javascript
+- Need to learn
